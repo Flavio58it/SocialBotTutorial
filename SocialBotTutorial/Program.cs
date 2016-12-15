@@ -62,8 +62,11 @@ namespace SocialBotTutorial
             byte[] nachricht;
             byte[] antwort;
 
-            string graphURL = "https://graph.facebook.com/Eine.lustige.Testseite/feed";
-            //string graphURL ="https://graph.facebook.com/me/feed";
+            //auf eigene FB-Seite posten
+            string graphURL ="https://graph.facebook.com/me/feed";
+            
+            //oder auf eine eigene Seite:
+            //string graphURL = "https://graph.facebook.com/Eine.lustige.Testseite/feed";
 
             WebClient myWebClient = new WebClient();
 
