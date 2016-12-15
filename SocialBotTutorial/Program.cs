@@ -16,13 +16,12 @@ namespace SocialBotTutorial
 
             string[] stadt = { "Stuttgart", "Berlin", "Hamburg" };
             string wetter, temperatur;
-            string[] aktion = { "ins Kino", "ins Musem", "was essen" };
+            string[] aktion = { "ins Kino", "ins Museum", "was essen" };
             string[] frage = { "Was macht ihr so?", "Wer hat einen Tipp für mich?", "Wer kommt mit?" };
 
             Random r = new Random();
             int zufallStadt = r.Next(0, 3);
-            zufallStadt = 0;
-
+ 
             string urlWertherApi 
                 = "http://api.openweathermap.org/data/2.5/weather?mode=xml&units=metric&lang=de";
 
@@ -41,13 +40,15 @@ namespace SocialBotTutorial
                 Console.WriteLine(ex.Message);
             }
 
-            wetter=doc.GetElementsByTagName("weather")[0].Attributes.GetNamedItem("value").Value;
-            temperatur=doc.GetElementsByTagName("temperature")[0].Attributes.GetNamedItem("value").Value;
+            wetter=doc.GetElementsByTagName("weather")[0]
+                .Attributes.GetNamedItem("value").Value;
+            temperatur=doc.GetElementsByTagName("temperature")[0]
+                .Attributes.GetNamedItem("value").Value;
                         
             int zufallAktion = r.Next(0, 3);
             int zufallFrage = r.Next(0, 3);
 
-            string ausgabe = "Ich bin gerade in " + stadt[zufallStadt]
+            string ausgabe = "Ich bin derzeit in " + stadt[zufallStadt]
                 + " und hier ist es gerade " + wetter
                 + " bei " + temperatur + "°C."
                 + " Ich glaub ich geh jetzt gleich " + aktion[zufallAktion]
