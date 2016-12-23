@@ -7,6 +7,19 @@ using System.Threading.Tasks;
 using System.Xml;
 
 
+/*
+    TUTORIAL MIT VIDEO siehe:
+
+    http://frank-it-beratung.com/blog/2016/12/15/tutorial-ein-social-bot-im-eigenbau-mit-csharp/
+        
+    ACHTUNG: nicht alles, was technisch möglich ist, ist bei Facebook
+    erlaubt oder erwünscht - bitte genau die Plattformrichtlinien studieren:
+
+    https://developers.facebook.com/policy
+    
+    */
+
+
 namespace SocialBotTutorial
 {
     class Program
